@@ -1,0 +1,108 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <libextobjc/EXTScope.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <Mantle.h>
+#import "NSString+Ext.h"
+#import "DataModelProtocol.h"
+#import "NetHelper.h"
+#import "ObjectiveRecord.h"
+#import "UIViewController+V2ex.h"
+#import "MemUtil.h"
+
+#if __OPTIMIZE__
+#define Product  1
+#else
+#define Product  1
+#endif
+
+#define UseriOSAgent @"Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B329 Safari/8536.25"
+
+#define UserMacAgent @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.117 Safari/537.36"
+
+#define GoogleAdsId           @"ca-app-pub-6097636629940333/3665952002"  //a1534e3873472aa
+
+//UserDefault
+#define UserNameKey           @"AccountUserName"
+#define RemPasswdKey          @"RemPasswd"
+#define AutoLoginKey          @"AutoLogin"
+
+//KeyChain
+#define FullVersionKey        @"IsProduct"
+
+//IAP
+#define UpgradeIAPId          @"com.v2ex.ads"
+
+#define FileExpireTime      60 * 60 * 24   // Cache Expire time is one day
+#define DBExpireTime        60 * 60 * 24   //24个小时自动过期
+#define DBExpireTime2       60 * 60 * 24 * 7 // one week
+#define Request_Time_Interval 1     //每个webservice一定要间隔一秒
+
+
+typedef NS_ENUM (NSUInteger, TopicType) {
+    General_Topic_Type,
+    Latest_Topic_Type
+};
+
+typedef NS_ENUM (NSUInteger, NotificationType) {
+    Notification_Reply,
+    Notification_Thanks_Reply,
+    Notification_Thanks_TopicCreate,
+    Notification_Collected,
+};
+
+#define NetServerUrl          @"http://v2ex.com"
+
+#if (Product)
+#define BackendServer         @"http://www.sohoin.com:8888"
+#else
+#define BackendServer         @"http://192.168.20.147:8888"
+#endif
+
+//json api
+#define SiteApiUrl            NetServerUrl@"/api/site/stats.json"        //Done,  cache in file
+#define InfoApiUrl            NetServerUrl@"/api/site/info.json"         //Done,  cache in file
+#define NodesApiUrl           NetServerUrl@"/api/nodes/all.json"         //显示所有节点, Done,  cache in db
+#define ShowNodeApiUrl        NetServerUrl@"/api/nodes/show.json"        //显示节点概要,  Done, cache in db
+#define LatestTopicsApiUrl    NetServerUrl@"/api/topics/latest.json"     //最新主题, cache in file
+#define ShowTopicApiUrl       NetServerUrl@"/api/topics/show.json"       //请求主题内容,  Done,  cache in db
+#define CreateTopicApiUrl     NetServerUrl@"/api/topics/create.json"     //创建主题
+#define ShowTopicReplayApiUrl NetServerUrl@"/api/replies/show.json"      //请求主题回复, Done,  cache in db
+#define ShowMemberInforApiUrl NetServerUrl@"/api/members/show.json"      //个人资料, Done,  cache in db
+
+//html api
+#define LoginApiUrl           NetServerUrl@"/signin"
+#define LogoutApiUrl          NetServerUrl@"/signout"
+#define BalanceDailyUrl       NetServerUrl@"/mission/daily"
+
+#define AboutMeUrl  BackendServer@"/v2ex/public/aboutme.html"
+
+#define UpgradeMsg  @"当前版本不支持该功能，请升级为完整版本。完整版具有发贴，回贴，消息推送，无广告的功能。"
+
+
+#define Site_Tab    0
+#define More_Tab    1
+
+#define ThemeColor [UIColor colorWithRed:233/255.0f green:232/255.0f blue:227/255.0f alpha:1.f]
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568) ? NO : YES)
+
+#ifdef DEBUG
+#    define DLog(...) NSLog(__VA_ARGS__)
+#else
+#    define DLog(...)
+#endif

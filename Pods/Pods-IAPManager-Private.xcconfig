@@ -1,0 +1,5 @@
+#include "Pods-IAPManager.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/IAPManager" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AsyncImageView" "${PODS_ROOT}/Headers/CRToast" "${PODS_ROOT}/Headers/FRDLivelyButton" "${PODS_ROOT}/Headers/HMSegmentedControl" "${PODS_ROOT}/Headers/IAPManager" "${PODS_ROOT}/Headers/NSDate+TimeAgo" "${PODS_ROOT}/Headers/ObjectiveRecord" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/PonyDebugger" "${PODS_ROOT}/Headers/RTagCloudView" "${PODS_ROOT}/Headers/STTweetLabel" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/SocketRocket" "${PODS_ROOT}/Headers/UIActionSheet+Blocks" "${PODS_ROOT}/Headers/UIAlertView+Blocks" "${PODS_ROOT}/Headers/UICKeyChainStore"
+OTHER_LDFLAGS = -ObjC ${PODS_IAPMANAGER_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

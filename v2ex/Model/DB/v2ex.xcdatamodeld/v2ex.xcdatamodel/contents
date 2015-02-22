@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DBConfig" representedClassName="DBConfig" syncable="YES">
+        <attribute name="lastModifyDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="tableOrService" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DBNode" representedClassName="DBNode" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="footer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="header" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_alternative" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicCount" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DBReply" representedClassName="DBReply" syncable="YES">
+        <attribute name="avatar_large" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_mini" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_normal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replyId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thanks" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBTopic" inverseName="replies" inverseEntity="DBTopic" syncable="YES"/>
+    </entity>
+    <entity name="DBTopic" representedClassName="DBTopic" syncable="YES">
+        <attribute name="cacheDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nodeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="readed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="topicAuthorImgUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicAuthorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicCreated" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicHtmlContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicLast_modified" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicRepliesCount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBReply" inverseName="topic" inverseEntity="DBReply" syncable="YES"/>
+    </entity>
+    <entity name="DBUser" representedClassName="DBUser" syncable="YES">
+        <attribute name="avatar_l" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_m" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_s" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="careWord" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collections" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="homepage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pushType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tagline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DBConfig" positionX="-54" positionY="90" width="128" height="75"/>
+        <element name="DBNode" positionX="25" positionY="260" width="128" height="180"/>
+        <element name="DBReply" positionX="223" positionY="305" width="128" height="238"/>
+        <element name="DBTopic" positionX="259" positionY="81" width="128" height="283"/>
+        <element name="DBUser" positionX="-162" positionY="252" width="128" height="270"/>
+    </elements>
+</model>

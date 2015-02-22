@@ -1,0 +1,5 @@
+#include "Pods-FRDLivelyButton.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/FRDLivelyButton" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/AsyncImageView" "${PODS_ROOT}/Headers/CRToast" "${PODS_ROOT}/Headers/FRDLivelyButton" "${PODS_ROOT}/Headers/HMSegmentedControl" "${PODS_ROOT}/Headers/IAPHelper" "${PODS_ROOT}/Headers/Mantle" "${PODS_ROOT}/Headers/Masonry" "${PODS_ROOT}/Headers/NSDate+TimeAgo" "${PODS_ROOT}/Headers/ObjectiveRecord" "${PODS_ROOT}/Headers/ObjectiveSugar" "${PODS_ROOT}/Headers/ReactiveCocoa" "${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa" "${PODS_ROOT}/Headers/ReactiveViewModel" "${PODS_ROOT}/Headers/SVProgressHUD" "${PODS_ROOT}/Headers/UIActionSheet+Blocks" "${PODS_ROOT}/Headers/UIAlertView+Blocks" "${PODS_ROOT}/Headers/UICKeyChainStore" "${PODS_ROOT}/Headers/libextobjc"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}

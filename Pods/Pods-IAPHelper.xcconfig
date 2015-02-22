@@ -1,0 +1,1 @@
+PODS_IAPHELPER_OTHER_LDFLAGS = -framework StoreKit
